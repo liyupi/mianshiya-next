@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yupi.mianshiya.mapper.QuestionBankQuestionMapper">
+
+    <resultMap id="BaseResultMap" type="com.yupi.mianshiya.model.entity.QuestionBankQuestion">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="questionBankId" column="questionBankId" jdbcType="BIGINT"/>
+            <result property="questionId" column="questionId" jdbcType="BIGINT"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,questionBankId,questionId,
+        userId,createTime,updateTime
+    </sql>
+</mapper>
