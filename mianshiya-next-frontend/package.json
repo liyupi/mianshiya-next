@@ -12,6 +12,9 @@
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.1",
     "@ant-design/pro-components": "^2.7.15",
+    "@bytemd/plugin-gfm": "^1.21.0",
+    "@bytemd/plugin-highlight": "^1.21.0",
+    "@bytemd/react": "^1.21.0",
     "@reduxjs/toolkit": "^2.2.7",
     "antd": "^5.20.3",
     "axios": "^1.7.5",

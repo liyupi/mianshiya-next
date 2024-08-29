@@ -1,12 +1,12 @@
 "use client";
-import {AntdRegistry} from "@ant-design/nextjs-registry";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import BasicLayout from "@/layouts/BasicLayout";
-import React, {useCallback, useEffect} from "react";
-import {Provider, useDispatch} from "react-redux";
-import store, {AppDispatch} from "@/stores";
+import React, { useCallback, useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
+import store, { AppDispatch } from "@/stores";
+import { getLoginUserUsingGet } from "@/api/userController";
+import AccessLayout from "@/access/AccessLayout";
 import "./globals.css";
-import {getLoginUserUsingGet} from "@/api/userController";
-import {setLoginUser} from "@/stores/loginUser";
 
 /**
  * 全局初始化逻辑
@@ -25,14 +25,16 @@ const InitLayout: React.FC<
     if (res.data) {
       // 更新全局用户状态
     } else {
-      setTimeout(() => {
-        const testUser = {
-          userName: "测试登录",
-          id: 1,
-          userAvatar: "https://www.code-nav.cn/logo.png",
-        };
-        dispatch(setLoginUser(testUser));
-      }, 3000);
+      // 仅用于测试
+      // setTimeout(() => {
+      //   const testUser = {
+      //     userName: "测试登录",
+      //     id: 1,
+      //     userAvatar: "https://www.code-nav.cn/logo.png",
+      //     userRole: ACCESS_ENUM.ADMIN
+      //   };
+      //   dispatch(setLoginUser(testUser));
+      // }, 3000);
     }
   }, []);
 
@@ -54,7 +56,9 @@ export default function RootLayout({
         <AntdRegistry>
           <Provider store={store}>
             <InitLayout>
-              <BasicLayout>{children}</BasicLayout>
+              <BasicLayout>
+                <AccessLayout>{children}</AccessLayout>
+              </BasicLayout>
             </InitLayout>
           </Provider>
         </AntdRegistry>

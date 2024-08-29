@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css';
+import "./index.css";
 
 /**
  * 全局底部栏组件
