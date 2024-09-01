@@ -1,0 +1,37 @@
+{
+  "name": "mianshiya-next-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "openapi": "ts-node openapi.config.ts"
+  },
+  "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.1",
+    "@ant-design/pro-components": "^2.7.15",
+    "@bytemd/plugin-gfm": "^1.21.0",
+    "@bytemd/plugin-highlight": "^1.21.0",
+    "@bytemd/react": "^1.21.0",
+    "@reduxjs/toolkit": "^2.2.7",
+    "antd": "^5.20.3",
+    "axios": "^1.7.5",
+    "next": "14.2.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-redux": "^9.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@umijs/openapi": "^1.12.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.7",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.3.3",
+    "typescript": "^5"
+  }
+}
