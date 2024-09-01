@@ -1,6 +1,7 @@
 import { Editor } from "@bytemd/react";
 import gfm from "@bytemd/plugin-gfm";
 import highlight from "@bytemd/plugin-highlight";
+import "github-markdown-css/github-markdown-light.css";
 import "bytemd/dist/index.css";
 import "highlight.js/styles/vs.css";
 import "./index.css";
@@ -24,7 +25,7 @@ const MdEditor = (props: Props) => {
   return (
     <div className="md-editor">
       <Editor
-        value={value}
+        value={value || ""}
         placeholder={placeholder}
         mode="split"
         plugins={plugins}
