@@ -1,6 +1,6 @@
 {
   "aliases": {
-    "post": {}
+    "question": {}
   },
   "mappings": {
     "properties": {
@@ -18,31 +18,30 @@
       "content": {
         "type": "text",
         "analyzer": "ik_max_word",
-        "search_analyzer": "ik_smart",
-        "fields": {
-          "keyword": {
-            "type": "keyword",
-            "ignore_above": 256
-          }
-        }
+        "search_analyzer": "ik_smart"
       },
       "tags": {
         "type": "keyword"
       },
-      "thumbNum": {
-        "type": "long"
-      },
-      "favourNum": {
-        "type": "long"
+      "answer": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "search_analyzer": "ik_smart"
       },
       "userId": {
-        "type": "keyword"
+        "type": "long"
+      },
+      "editTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
       },
       "createTime": {
-        "type": "date"
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
       },
       "updateTime": {
-        "type": "date"
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss"
       },
       "isDelete": {
         "type": "keyword"

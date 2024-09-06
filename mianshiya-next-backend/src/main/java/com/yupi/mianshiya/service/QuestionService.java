@@ -3,7 +3,9 @@ package com.yupi.mianshiya.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.yupi.mianshiya.model.dto.post.PostQueryRequest;
 import com.yupi.mianshiya.model.dto.question.QuestionQueryRequest;
+import com.yupi.mianshiya.model.entity.Post;
 import com.yupi.mianshiya.model.entity.Question;
 import com.yupi.mianshiya.model.vo.QuestionVO;
 
@@ -58,4 +60,12 @@ public interface QuestionService extends IService<Question> {
      * @return
      */
     Page<Question> listQuestionByPage(QuestionQueryRequest questionQueryRequest);
+
+    /**
+     * 从 ES 查询题目
+     *
+     * @param questionQueryRequest
+     * @return
+     */
+    Page<Question> searchFromEs(QuestionQueryRequest questionQueryRequest);
 }
