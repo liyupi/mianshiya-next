@@ -97,7 +97,7 @@ public class PostEsDTO implements Serializable {
         BeanUtils.copyProperties(post, postEsDTO);
         String tagsStr = post.getTags();
         if (StringUtils.isNotBlank(tagsStr)) {
-            postEsDTO.setTags(JSONUtil.toList(tagsStr, String.class));
+            postEsDTO.setTags(JSONUtil.toList(JSONUtil.parseArray(tagsStr), String.class));
         }
         return postEsDTO;
     }

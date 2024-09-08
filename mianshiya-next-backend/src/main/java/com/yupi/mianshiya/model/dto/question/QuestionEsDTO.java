@@ -85,7 +85,7 @@ public class QuestionEsDTO implements Serializable {
         BeanUtils.copyProperties(question, questionEsDTO);
         String tagsStr = question.getTags();
         if (StrUtil.isNotBlank(tagsStr)) {
-            questionEsDTO.setTags(JSONUtil.toList(tagsStr, String.class));
+            questionEsDTO.setTags(JSONUtil.toList(JSONUtil.parseArray(tagsStr), String.class));
         }
         return questionEsDTO;
     }
