@@ -15,7 +15,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Document(indexName = "question")
+// todo 取消注释开启 ES（须先配置 ES）
+//@Document(indexName = "question")
 @Data
 public class QuestionEsDTO implements Serializable {
 

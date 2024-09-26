@@ -155,9 +155,11 @@ public class QuestionController {
     @GetMapping("/get/vo")
     public BaseResponse<QuestionVO> getQuestionVOById(long id, HttpServletRequest request) {
         ThrowUtils.throwIf(id <= 0, ErrorCode.PARAMS_ERROR);
-        // 检测和处置爬虫
-        User loginUser = userService.getLoginUser(request);
-        crawlerDetect(loginUser.getId());
+        // 检测和处置爬虫（可以自行扩展为 - 登录后才能获取到答案）
+        User loginUser = userService.getLoginUserPermitNull(request);
+        if (loginUser != null) {
+            crawlerDetect(loginUser.getId());
+        }
         // 友情提示，对于敏感的内容，可以再打印一些日志，记录用户访问的内容
         // 查询数据库
         Question question = questionService.getById(id);
@@ -360,7 +362,11 @@ public class QuestionController {
         long size = questionQueryRequest.getPageSize();
         // 限制爬虫
         ThrowUtils.throwIf(size > 200, ErrorCode.PARAMS_ERROR);
-        Page<Question> questionPage = questionService.searchFromEs(questionQueryRequest);
+        // todo 取消注释开启 ES（须先配置 ES）
+        // 查询 ES
+        // Page<Question> questionPage = questionService.searchFromEs(questionQueryRequest);
+        // 查询数据库（作为没有 ES 的降级方案）
+        Page<Question> questionPage = questionService.listQuestionByPage(questionQueryRequest);
         return ResultUtils.success(questionService.getQuestionVOPage(questionPage, request));
     }
 

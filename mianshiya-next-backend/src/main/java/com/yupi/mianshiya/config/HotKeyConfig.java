@@ -12,8 +12,9 @@ import org.springframework.context.annotation.Configuration;
  * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
  * @from <a href="https://yupi.icu">编程导航</a>
  */
-@Configuration
-@ConfigurationProperties(prefix = "hotkey")
+// todo 取消注释开启 HotKey（须先配置 HotKey）
+//@Configuration
+//@ConfigurationProperties(prefix = "hotkey")
 @Data
 public class HotKeyConfig {
 

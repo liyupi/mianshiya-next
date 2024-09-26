@@ -18,7 +18,7 @@ import java.util.Map;
 @Slf4j
 public class BlackIpUtils {
 
-    private static BitMapBloomFilter bloomFilter;
+    private static BitMapBloomFilter bloomFilter = new BitMapBloomFilter(100);
 
     // 判断 ip 是否在黑名单里
     public static boolean isBlackIp(String ip) {
