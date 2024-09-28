@@ -1,4 +1,3 @@
-"use server";
 import Title from "antd/es/typography/Title";
 import { Divider, Flex, message } from "antd";
 import Link from "next/link";
@@ -7,6 +6,9 @@ import { listQuestionVoByPageUsingPost } from "@/api/questionController";
 import QuestionBankList from "@/components/QuestionBankList";
 import QuestionList from "@/components/QuestionList";
 import "./index.css";
+
+// 本页面使用服务端渲染，禁用静态生成
+export const dynamic = 'force-dynamic';
 
 /**
  * 主页

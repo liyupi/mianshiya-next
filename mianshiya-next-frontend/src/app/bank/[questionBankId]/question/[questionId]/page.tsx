@@ -27,7 +27,7 @@ export default async function BankQuestionPage({ params }) {
     });
     bank = res.data;
   } catch (e) {
-    message.error("获取题库列表失败，" + e.message);
+    console.error("获取题库列表失败，" + e.message);
   }
   // 错误处理
   if (!bank) {
@@ -42,7 +42,7 @@ export default async function BankQuestionPage({ params }) {
     });
     question = res.data;
   } catch (e) {
-    message.error("获取题目详情失败，" + e.message);
+    console.error("获取题目详情失败，" + e.message);
   }
   // 错误处理
   if (!question) {

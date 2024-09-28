@@ -24,7 +24,7 @@ export default async function BankPage({ params }) {
     });
     bank = res.data;
   } catch (e) {
-    message.error("获取题库列表失败，" + e.message);
+    console.error("获取题库详情失败，" + e.message);
   }
 
   // 错误处理
