@@ -1,6 +1,6 @@
 # 线上配置文件
 # @author <a href="https://github.com/liyupi">程序员鱼皮</a>
-# @from <a href="https://yupi.icu">编程导航知识星球</a>
+# @from <a href="https://code-nav.cn">编程导航</a>
 server:
   port: 8101
 spring:
@@ -18,12 +18,6 @@ spring:
     host: localhost
     port: 6379
     timeout: 5000
-    password: 123456
-  # Elasticsearch 配置
-  # todo 需替换配置
-  elasticsearch:
-    uris: http://localhost:9200
-    username: root
     password: 123456
 mybatis-plus:
   configuration:
