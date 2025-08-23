@@ -3,8 +3,10 @@ import { Divider, Flex, message } from "antd";
 import Link from "next/link";
 import { listQuestionBankVoByPageUsingPost } from "@/api/questionBankController";
 import { listQuestionVoByPageUsingPost } from "@/api/questionController";
+import { listArticleVoByPageUsingPost } from "@/api/articleController";
 import QuestionBankList from "@/components/QuestionBankList";
 import QuestionList from "@/components/QuestionList";
+import ArticleList from "@/components/ArticleList";
 import "./index.css";
 
 // 本页面使用服务端渲染，禁用静态生成
@@ -17,6 +19,7 @@ export const dynamic = 'force-dynamic';
 export default async function HomePage() {
   let questionBankList = [];
   let questionList = [];
+  let articleList = [];
   try {
     const res = await listQuestionBankVoByPageUsingPost({
       pageSize: 12,
@@ -39,6 +42,17 @@ export default async function HomePage() {
     message.error("获取题目列表失败，" + e.message);
   }
 
+  try {
+    const res = await listArticleVoByPageUsingPost({
+      pageSize: 6,
+      sortField: "createTime",
+      sortOrder: "descend",
+    });
+    articleList = res.data.records ?? [];
+  } catch (e) {
+    message.error("获取文章列表失败，" + e.message);
+  }
+
   return (
     <div id="homePage" className="max-width-content">
       <Flex justify="space-between" align="center">
@@ -52,6 +66,12 @@ export default async function HomePage() {
         <Link href={"/questions"}>查看更多</Link>
       </Flex>
       <QuestionList questionList={questionList} />
+      <Divider />
+      <Flex justify="space-between" align="center">
+        <Title level={3}>最新文章</Title>
+        <Link href={"/article"}>查看更多</Link>
+      </Flex>
+      <ArticleList articleList={articleList} />
     </div>
   );
 }

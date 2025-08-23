@@ -809,4 +809,180 @@ declare namespace API {
     userProfile?: string;
     userRole?: string;
   };
+
+  // 文章相关类型定义
+  type Article = {
+    content?: string;
+    createTime?: string;
+    favourNum?: number;
+    id?: number;
+    isDelete?: number;
+    tags?: string;
+    thumbNum?: number;
+    title?: string;
+    updateTime?: string;
+    userId?: number;
+    summary?: string;
+    category?: string;
+    viewCount?: number;
+  };
+
+  type ArticleAddRequest = {
+    content?: string;
+    tags?: string[];
+    title?: string;
+    summary?: string;
+    category?: string;
+  };
+
+  type ArticleEditRequest = {
+    content?: string;
+    id?: number;
+    tags?: string[];
+    title?: string;
+    summary?: string;
+    category?: string;
+  };
+
+  type ArticleUpdateRequest = {
+    content?: string;
+    id?: number;
+    tags?: string[];
+    title?: string;
+    summary?: string;
+    category?: string;
+  };
+
+  type ArticleQueryRequest = {
+    content?: string;
+    current?: number;
+    favourUserId?: number;
+    id?: number;
+    notId?: number;
+    orTags?: string[];
+    pageSize?: number;
+    searchText?: string;
+    sortField?: string;
+    sortOrder?: string;
+    tags?: string[];
+    title?: string;
+    userId?: number;
+    category?: string;
+  };
+
+  type BatchDeleteRequest = {
+    ids?: number[];
+  };
+
+  type ArticleVO = {
+    content?: string;
+    createTime?: string;
+    favourNum?: number;
+    hasFavour?: boolean;
+    hasThumb?: boolean;
+    id?: number;
+    tagList?: string[];
+    thumbNum?: number;
+    title?: string;
+    updateTime?: string;
+    user?: UserVO;
+    userId?: number;
+    summary?: string;
+    category?: string;
+    viewCount?: number;
+  };
+
+  type BaseResponseArticleVO_ = {
+    code?: number;
+    data?: ArticleVO;
+    message?: string;
+  };
+
+  type BaseResponsePageArticle_ = {
+    code?: number;
+    data?: PageArticle_;
+    message?: string;
+  };
+
+  type BaseResponsePageArticleVO_ = {
+    code?: number;
+    data?: PageArticleVO_;
+    message?: string;
+  };
+
+  type PageArticle_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: Article[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageArticleVO_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: ArticleVO[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type getArticleVOByIdUsingGETParams = {
+    /** id */
+    id: number;
+  };
+
+  // 文章收藏相关类型定义
+  type ArticleFavour = {
+    articleId?: number;
+    createTime?: string;
+    favourUserId?: number;
+    id?: number;
+    updateTime?: string;
+  };
+
+  type ArticleFavourAddRequest = {
+    articleId?: number;
+  };
+
+  type ArticleFavourDeleteRequest = {
+    articleId?: number;
+  };
+
+  type ArticleFavourQueryRequest = {
+    current?: number;
+    pageSize?: number;
+    articleQueryRequest?: ArticleQueryRequest;
+    sortField?: string;
+    sortOrder?: string;
+    favourUserId?: number;
+  };
+
+  type BaseResponsePageArticleFavour_ = {
+    code?: number;
+    data?: PageArticleFavour_;
+    message?: string;
+  };
+
+  type PageArticleFavour_ = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: ArticleFavour[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
 }
