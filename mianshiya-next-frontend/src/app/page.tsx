@@ -1,10 +1,10 @@
 import Title from "antd/es/typography/Title";
-import { Divider, Flex, message } from "antd";
+import { Divider, Flex } from "antd";
 import Link from "next/link";
-import { listQuestionBankVoByPageUsingPost } from "@/api/questionBankController";
-import { listQuestionVoByPageUsingPost } from "@/api/questionController";
+import { getMockArticles } from "@/mock/articleData";
 import QuestionBankList from "@/components/QuestionBankList";
 import QuestionList from "@/components/QuestionList";
+import ArticleList from "@/components/ArticleList";
 import "./index.css";
 
 // 本页面使用服务端渲染，禁用静态生成
@@ -15,29 +15,12 @@ export const dynamic = 'force-dynamic';
  * @constructor
  */
 export default async function HomePage() {
-  let questionBankList = [];
-  let questionList = [];
-  try {
-    const res = await listQuestionBankVoByPageUsingPost({
-      pageSize: 12,
-      sortField: "createTime",
-      sortOrder: "descend",
-    });
-    questionBankList = res.data.records ?? [];
-  } catch (e) {
-    message.error("获取题库列表失败，" + e.message);
-  }
-
-  try {
-    const res = await listQuestionVoByPageUsingPost({
-      pageSize: 12,
-      sortField: "createTime",
-      sortOrder: "descend",
-    });
-    questionList = res.data.records ?? [];
-  } catch (e) {
-    message.error("获取题目列表失败，" + e.message);
-  }
+  // 使用假数据
+  const mockArticleData = getMockArticles({
+    pageSize: 6,
+    sortField: "createTime",
+    sortOrder: "descend",
+  });
 
   return (
     <div id="homePage" className="max-width-content">
@@ -45,13 +28,19 @@ export default async function HomePage() {
         <Title level={3}>最新题库</Title>
         <Link href={"/banks"}>查看更多</Link>
       </Flex>
-      <QuestionBankList questionBankList={questionBankList} />
+      <QuestionBankList questionBankList={[]} />
       <Divider />
       <Flex justify="space-between" align="center">
         <Title level={3}>最新题目</Title>
         <Link href={"/questions"}>查看更多</Link>
       </Flex>
-      <QuestionList questionList={questionList} />
+      <QuestionList questionList={[]} />
+      <Divider />
+      <Flex justify="space-between" align="center">
+        <Title level={3}>最新文章</Title>
+        <Link href={"/article"}>查看更多</Link>
+      </Flex>
+      <ArticleList articleList={mockArticleData.records} />
     </div>
   );
 }
