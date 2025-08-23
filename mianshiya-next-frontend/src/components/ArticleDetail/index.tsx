@@ -13,7 +13,7 @@ import { zhCN } from "date-fns/locale";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/stores";
-import { addArticleFavourUsingPost, deleteArticleFavourUsingPost } from "@/api/articleFavourController";
+// 移除后端接口调用，使用假数据
 import MdViewer from "@/components/MdViewer";
 import "./index.css";
 
@@ -69,12 +69,12 @@ const ArticleDetail: React.FC<Props> = ({ article }) => {
 
     try {
       if (isFavour) {
-        await deleteArticleFavourUsingPost({ articleId: id });
+        // 模拟取消收藏
         setFavourCount(favourCount - 1);
         setIsFavour(false);
         message.success("取消收藏成功");
       } else {
-        await addArticleFavourUsingPost({ articleId: id });
+        // 模拟收藏
         setFavourCount(favourCount + 1);
         setIsFavour(true);
         message.success("收藏成功");

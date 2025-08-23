@@ -1,6 +1,5 @@
 "use server";
-import { message } from "antd";
-import { getArticleVoByIdUsingGet } from "@/api/articleController";
+import { getMockArticleById } from "@/mock/articleData";
 import ArticleDetail from "@/components/ArticleDetail";
 import "./index.css";
 
@@ -8,23 +7,20 @@ import "./index.css";
  * 文章详情页面
  * @constructor
  */
-export default async function ArticleDetailPage({ params }) {
-  const { articleId } = params;
+export default async function ArticleDetailPage({
+  searchParams,
+}: {
+  searchParams: { id?: string };
+}) {
+  // 从查询参数中获取文章ID
+  const { id } = searchParams;
 
-  // 获取文章详情
-  let article = undefined;
-  try {
-    const res = await getArticleVoByIdUsingGet({
-      id: articleId,
-    });
-    article = res.data;
-  } catch (e) {
-    message.error("获取文章详情失败，" + e.message);
-  }
+  // 使用假数据获取文章详情
+  const article = id ? getMockArticleById(parseInt(id)) : undefined;
 
   // 错误处理
   if (!article) {
-    return <div>获取文章详情失败，请刷新重试</div>;
+    return <div>文章不存在，请检查链接</div>;
   }
 
   return (

@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Input, Select, Button, Space, Pagination, message } from "antd";
+import { Input, Select, Button, Space, Pagination } from "antd";
 import { SearchOutlined, ReloadOutlined } from "@ant-design/icons";
-import { searchArticleVOByPageUsingPost } from "@/api/articleController";
+import { getMockArticles, getMockCategories } from "@/mock/articleData";
 import ArticleList from "@/components/ArticleList";
 import "./index.css";
 
@@ -46,11 +46,12 @@ const ArticleTable: React.FC<Props> = ({
   const loadData = async (params: API.ArticleQueryRequest) => {
     setLoading(true);
     try {
-      const res = await searchArticleVOByPageUsingPost(params);
-      setArticleList(res.data?.records ?? []);
-      setTotal(res.data?.total ?? 0);
+      // 使用假数据
+      const mockData = getMockArticles(params);
+      setArticleList(mockData.records);
+      setTotal(mockData.total);
     } catch (e: any) {
-      message.error("获取文章列表失败，" + e.message);
+      console.error("获取文章列表失败", e);
     }
     setLoading(false);
   };
@@ -140,11 +141,9 @@ const ArticleTable: React.FC<Props> = ({
             onChange={handleCategoryChange}
             value={searchParams.category}
           >
-            <Option value="技术">技术</Option>
-            <Option value="面试">面试</Option>
-            <Option value="经验">经验</Option>
-            <Option value="教程">教程</Option>
-            <Option value="其他">其他</Option>
+            {getMockCategories().map(category => (
+              <Option key={category} value={category}>{category}</Option>
+            ))}
           </Select>
           <Select
             placeholder="排序方式"

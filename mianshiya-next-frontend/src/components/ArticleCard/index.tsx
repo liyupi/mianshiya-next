@@ -94,7 +94,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
       </div>
 
       <div className="article-card-content">
-        <Link href={`/article/${id}`}>
+        <Link href={`/article/article_detail?id=${id}`}>
           <Title level={4} className="article-title">
             {title}
           </Title>
