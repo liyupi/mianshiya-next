@@ -1,0 +1,5 @@
+#articlesPage {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f8fafc 0%, #ffffff 100%);
+    padding: 40px 0;
+}
