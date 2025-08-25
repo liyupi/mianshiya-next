@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yupi.mianshiya.mapper.ArticleMapper">
+
+    <resultMap id="BaseResultMap" type="com.yupi.mianshiya.model.entity.Article">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="LONGVARCHAR"/>
+            <result property="summary" column="summary" jdbcType="LONGVARCHAR"/>
+            <result property="cover" column="cover" jdbcType="VARCHAR"/>
+            <result property="tags" column="tags" jdbcType="VARCHAR"/>
+            <result property="category" column="category" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="viewNum" column="viewNum" jdbcType="INTEGER"/>
+            <result property="thumbNum" column="thumbNum" jdbcType="INTEGER"/>
+            <result property="favourNum" column="favourNum" jdbcType="INTEGER"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="editTime" column="editTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,content,summary,cover,tags,category,status,viewNum,thumbNum,favourNum,
+        userId,editTime,createTime,updateTime,isDelete
+    </sql>
+</mapper>

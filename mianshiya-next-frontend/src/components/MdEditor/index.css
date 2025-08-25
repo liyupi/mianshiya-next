@@ -1,5 +1,31 @@
 .md-editor {
-  .bytemd-toolbar-icon.bytemd-tippy.bytemd-tippy-right:last-child {
-    display: none;
-  }
+    .bytemd-toolbar-icon.bytemd-tippy.bytemd-tippy-right:last-child {
+        display: none;
+    }
+}
+
+
+/* 修复全屏编辑器的 z-index 问题 */
+
+.bytemd-fullscreen {
+    z-index: 1060 !important;
+}
+
+.bytemd-fullscreen .bytemd {
+    z-index: 1060 !important;
+}
+
+
+/* 确保全屏编辑器在 Modal 之上 */
+
+.bytemd-fullscreen .bytemd-editor,
+.bytemd-fullscreen .bytemd-preview {
+    z-index: 1060 !important;
+}
+
+
+/* 全屏工具栏 */
+
+.bytemd-fullscreen .bytemd-toolbar {
+    z-index: 1061 !important;
 }

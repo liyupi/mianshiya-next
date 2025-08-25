@@ -1,5 +1,5 @@
 import { MenuDataItem } from "@ant-design/pro-layout";
-import { CrownOutlined } from "@ant-design/icons";
+import { CrownOutlined, HeartOutlined } from "@ant-design/icons";
 import ACCESS_ENUM from "@/access/accessEnum";
 
 // 菜单列表
@@ -15,6 +15,10 @@ export const menus = [
   {
     path: "/questions",
     name: "题目",
+  },
+  {
+    path: "/articles",
+    name: "文章",
   },
   {
     path: "/mockInterview/add",
@@ -44,6 +48,11 @@ export const menus = [
       {
         path: "/admin/question",
         name: "题目管理",
+        access: ACCESS_ENUM.ADMIN,
+      },
+      {
+        path: "/admin/article",
+        name: "文章管理",
         access: ACCESS_ENUM.ADMIN,
       },
     ],
