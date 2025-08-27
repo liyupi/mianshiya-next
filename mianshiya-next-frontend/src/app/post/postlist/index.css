@@ -1,0 +1,40 @@
+.post_main {
+    width: 100%;
+    height: 100%;
+    .list {
+        width: 100%;
+        padding: 8px 16px;
+        height: calc(100vh - 56px - 32px);
+        overflow: auto;
+        .scroll_content {
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            .post_list {
+                width: 45%;
+                min-height: 100%;
+                margin: 0 16px;
+                border-radius: 8px;
+                background: #ffffff;
+            }
+            .advertisement {
+                width: 276px;
+                background: pink;
+                position: relative;
+                .advertisement_static {
+                    position: static;
+                }
+                .advertisement_sticky_top {
+                    position: sticky;
+                    top: 0;
+                    left: 0;
+                }
+
+            }
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+    }
+}
