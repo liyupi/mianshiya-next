@@ -71,6 +71,7 @@ public class PostController {
         postService.validPost(post, true);
         User loginUser = userService.getLoginUser(request);
         post.setUserId(loginUser.getId());
+
         post.setFavourNum(0);
         post.setThumbNum(0);
         boolean result = postService.save(post);
