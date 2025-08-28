@@ -523,6 +523,9 @@ declare namespace API {
     updateTime?: string;
     user?: UserVO;
     userId?: number;
+    cover?: string;
+    summary?: string;
+    category?: string;
   };
 
   type Question = {

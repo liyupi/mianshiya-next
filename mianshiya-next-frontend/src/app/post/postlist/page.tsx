@@ -5,6 +5,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { listPostVoByPageUsingPost } from "@/api/postController";
 import './index.css';
 import PostVO = API.PostVO;
+import PostCard from "@/components/PostCard";
 
 
 export default function PostList() {
@@ -17,7 +18,6 @@ export default function PostList() {
     if (loading) {
       return;
     }
-    console.log('loading');
     setLoading(true);
 
     listPostVoByPageUsingPost({
@@ -39,36 +39,28 @@ export default function PostList() {
     <div
       className="post_main"
     >
-      <div className="list" id="scrollableDiv">
-        <div className="scroll_content">
-          <div className="advertisement"></div>
-          <div className='post_list'>
-            <InfiniteScroll
-              dataLength={data.length}
-              next={loadMoreData}
-              hasMore={total < 0 || data.length < total}
-              loader={<Divider plain>加载中</Divider>}
-              endMessage={<Divider plain>没有更多了！ 🤐</Divider>}
-              scrollableTarget="scrollableDiv"
-            >
-              <List
-                dataSource={data}
-                renderItem={(item, index) => (
-                  <List.Item key={item.id}>
-                    <div style={{
-                      height: '200px'
-                    }}>{index}--{item.content}</div>
-                  </List.Item>
-                )}
-              />
-            </InfiniteScroll>
-          </div>
-          <div className="advertisement">
-            <div className='' style={{height: 400,background: 'red',marginBottom: 16}}>
-
-            </div>
-          </div>
+      <div className="scroll_content">
+        <div className="advertisement"></div>
+        <div className="post_list">
+          <InfiniteScroll
+            dataLength={data.length}
+            next={loadMoreData}
+            hasMore={total < 0 || data.length < total}
+            loader={<Divider plain>加载中</Divider>}
+            endMessage={<Divider plain>没有更多了！ 🤐</Divider>}
+            scrollableTarget="basicLayout"
+          >
+            <List
+              dataSource={data}
+              renderItem={(item, index) => (
+                <List.Item key={item.id}>
+                  <PostCard  postInfo={item}/>
+                </List.Item>
+              )}
+            />
+          </InfiniteScroll>
         </div>
+        <div className="advertisement"></div>
       </div>
     </div>
   );
