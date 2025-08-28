@@ -40,7 +40,16 @@ export default function PostList() {
       className="post_main"
     >
       <div className="scroll_content">
-        <div className="advertisement"></div>
+        <div className="advertisement">
+          <div className="advertisement_static">
+            <div className="title">
+              广告位招租
+            </div>
+            {
+              [1, 2, 3, 4, 5].map(el => <div key={el} className='item'>{'广告栏项目' + el}</div>)
+            }
+          </div>
+        </div>
         <div className="post_list">
           <InfiniteScroll
             dataLength={data.length}
@@ -54,13 +63,15 @@ export default function PostList() {
               dataSource={data}
               renderItem={(item, index) => (
                 <List.Item key={item.id}>
-                  <PostCard  postInfo={item}/>
+                  <PostCard postInfo={item} />
                 </List.Item>
               )}
             />
           </InfiniteScroll>
         </div>
-        <div className="advertisement"></div>
+        <div className="advertisement">
+
+        </div>
       </div>
     </div>
   );

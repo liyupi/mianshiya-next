@@ -1,12 +1,20 @@
 import './index.css';
 import PostVO = API.PostVO;
 import dayjs from "dayjs";
+import { useRouter } from "next/navigation";
+import { Image, Space } from 'antd';
+import { HeartOutlined, LikeOutlined } from "@ant-design/icons";
+import React from "react";
+import { doThumbUsingPost } from "@/api/postThumbController";
+import { getPostVoByIdUsingGet } from "@/api/postController";
+import { doPostFavourUsingPost } from "@/api/postFavourController";
 
 interface IPostCard {
   postInfo: PostVO;
 }
 
 const PostCard = (props: IPostCard) => {
+  const router = useRouter()
   const isToday = (time) => {
     // 处理传入的时间，可以是字符串、时间戳等 Day.js 支持的格式
     const targetDay = dayjs(time);
@@ -69,7 +77,10 @@ const PostCard = (props: IPostCard) => {
           <div className='summary'>
             {props.postInfo.summary}
           </div>
-          <div className='link_detail'>查看全文</div>
+          <div
+            className='link_detail'
+            onClick={()=>window.open(`/post/postdetail/${props.postInfo.id}`,'_blank')}
+          >查看全文</div>
           <div className='post_tags'>
             {
               props.postInfo.tagList?.map(item=>{
@@ -81,10 +92,23 @@ const PostCard = (props: IPostCard) => {
           </div>
         </div>
         <div className='cover'>
-
+          <Image
+            width={220}
+            height={130}
+            src={props.postInfo.cover}
+          />
         </div>
       </div>
-      <div className="footer"></div>
+      <div className='footer'>
+        <Space split={'|'}>
+          <div className={ props.postInfo?.hasFavour ? 'action ok_action' : 'action'}>
+            <HeartOutlined /><div style={{marginLeft: 8}}>{props.postInfo?.favourNum ?? 0}</div>
+          </div>
+          <div className={ props.postInfo?.hasThumb ? 'action ok_action' : 'action'}>
+            <LikeOutlined /><div style={{marginLeft: 8}}>{props.postInfo?.thumbNum ?? 0}</div>
+          </div>
+        </Space>
+      </div>
     </div>
   );
 };

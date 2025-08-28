@@ -67,5 +67,27 @@
                 }
             }
         }
+
+        .cover {
+            margin-right: 10%;
+        }
+    }
+
+    .footer {
+        font-size: 12px;
+        color: #aaa;
+        .action {
+            height: 20px;
+            display: flex;
+            align-items: center;
+            user-select: none;
+            &:hover {
+                color: #6eb1f3;
+            }
+        }
+
+        .ok_action {
+            color: #6eb1f3;
+        }
     }
 }
