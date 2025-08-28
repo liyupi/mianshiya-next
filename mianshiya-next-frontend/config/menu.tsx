@@ -26,6 +26,10 @@ export const menus = [
     target: "_blank",
   },
   {
+    path: "/post/postlist",
+    name: "文章",
+  },
+  {
     path: "/admin",
     name: "管理",
     icon: <CrownOutlined />,

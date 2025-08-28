@@ -42,6 +42,26 @@ public class PostQueryRequest extends PageRequest implements Serializable {
     private String content;
 
     /**
+     * 文章摘要
+     */
+    private String summary;
+
+    /**
+     * 文章封面
+     */
+    private String cover;
+
+    /**
+     * 文章分类
+     */
+    private String category;
+
+    /**
+     * 状态
+     */
+    private Integer status;
+
+    /**
      * 标签列表
      */
     private List<String> tags;
