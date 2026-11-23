@@ -17,6 +17,10 @@ export const menus = [
     name: "题目",
   },
   {
+    path: "/article",
+    name: "文章",
+  },
+  {
     path: "/mockInterview/add",
     name: "AI 模拟面试",
   },
@@ -44,6 +48,11 @@ export const menus = [
       {
         path: "/admin/question",
         name: "题目管理",
+        access: ACCESS_ENUM.ADMIN,
+      },
+      {
+        path: "/admin/article",
+        name: "文章管理",
         access: ACCESS_ENUM.ADMIN,
       },
     ],

@@ -13,6 +13,8 @@ import * as questionBankController from './questionBankController';
 import * as questionBankQuestionController from './questionBankQuestionController';
 import * as testSaTokenLoginController from './testSaTokenLoginController';
 import * as userController from './userController';
+import * as articleController from './articleController';
+import * as articleFavourController from './articleFavourController';
 export default {
   wxMpController,
   fileController,
@@ -25,4 +27,6 @@ export default {
   questionBankQuestionController,
   testSaTokenLoginController,
   userController,
+  articleController,
+  articleFavourController,
 };
