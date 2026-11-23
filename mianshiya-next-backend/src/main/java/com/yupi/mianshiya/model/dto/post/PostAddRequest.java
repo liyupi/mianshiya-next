@@ -24,6 +24,21 @@ public class PostAddRequest implements Serializable {
     private String content;
 
     /**
+     * 文章摘要
+     */
+    private String summary;
+
+    /**
+     * 文章封面
+     */
+    private String cover;
+
+    /**
+     * 文章分类
+     */
+    private String category;
+
+    /**
      * 标签列表
      */
     private List<String> tags;

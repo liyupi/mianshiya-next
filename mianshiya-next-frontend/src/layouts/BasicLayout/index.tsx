@@ -26,7 +26,7 @@ interface Props {
  * @param children
  * @constructor
  */
-export default function BasicLayout({ children }: Props) {
+export default function BasicLayout({children}: Props) {
   const pathname = usePathname();
   // 当前登录用户
   const loginUser = useSelector((state: RootState) => state.loginUser);
@@ -101,7 +101,7 @@ export default function BasicLayout({ children }: Props) {
                     },
                   ],
                   onClick: async (event: { key: React.Key }) => {
-                    const { key } = event;
+                    const {key} = event;
                     if (key === "logout") {
                       userLogout();
                     } else if (key === "userCenter") {

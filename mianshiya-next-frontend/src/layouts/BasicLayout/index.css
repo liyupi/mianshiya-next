@@ -5,3 +5,13 @@
 .ant-pro-layout-top {
   height: 100%;
 }
+
+.sticky-header {
+  background: #000;
+}
+
+#basicLayout header {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
