@@ -8,6 +8,27 @@ const nextConfig = {
         // !! WARN !!
         ignoreBuildErrors: true,
     },
+    images: {
+        remotePatterns: [{
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'www.code-nav.cn',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'pic.yupi.icu',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
 };
 
 export default nextConfig;

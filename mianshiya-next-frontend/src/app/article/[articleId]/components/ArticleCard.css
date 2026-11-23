@@ -1,0 +1,300 @@
+.article-detail-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+/* 文章头部 */
+
+.article-header {
+    padding: 32px 32px 0;
+}
+
+.article-detail-page .category-tag {
+    margin-bottom: 16px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.article-detail-page .article-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin: 0 0 24px 0;
+}
+
+.article-detail-page .author-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.article-detail-page .author-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.article-detail-page .author-avatar {
+    border: 2px solid #f0f0f0;
+}
+
+.article-detail-page .author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.article-detail-page .author-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.article-detail-page .author-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: #8a919f;
+}
+
+.article-detail-page .publish-time {
+    color: #8a919f;
+}
+
+.article-detail-page .view-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.article-detail-page .view-count .anticon {
+    font-size: 12px;
+}
+
+.article-detail-page .quick-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.article-detail-page .action-btn {
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.article-detail-page .action-btn[data-type="primary"] {
+    background: #1890ff;
+    border-color: #1890ff;
+}
+
+.article-detail-page .article-tags {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.article-detail-page .tag-item {
+    margin: 0;
+    padding: 4px 12px;
+    font-size: 13px;
+    background: #f7f8fa;
+    border: none;
+    color: #8a919f;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.article-detail-page .tag-item:hover {
+    background: #e6f7ff;
+    color: #1890ff;
+}
+
+.article-detail-page .header-divider {
+    margin: 20px 0 0 0;
+    border-color: #f0f0f0;
+}
+
+
+/* 文章正文 */
+
+.article-detail-page .article-body {
+    padding: 24px 32px;
+}
+
+.article-detail-page .article-detail-page .article-content {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #1a1a1a;
+    word-break: break-word;
+}
+
+.article-detail-page .article-content h1,
+.article-detail-page .article-content h2,
+.article-detail-page .article-content h3,
+.article-detail-page .article-content h4,
+.article-detail-page .article-content h5,
+.article-detail-page .article-content h6 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.article-detail-page .article-content h1 {
+    font-size: 28px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+}
+
+.article-detail-page .article-content h2 {
+    font-size: 24px;
+}
+
+.article-detail-page .article-content h3 {
+    font-size: 20px;
+}
+
+.article-detail-page .article-content p {
+    margin-bottom: 16px;
+    color: #1a1a1a;
+    line-height: 1.8;
+}
+
+.article-detail-page .article-content code {
+    background: #f7f8fa;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #e74c3c;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+.article-detail-page .article-content pre {
+    background: #f7f8fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 24px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.article-detail-page .article-content pre code {
+    background: none;
+    padding: 0;
+    color: #1a1a1a;
+}
+
+.article-detail-page .article-content blockquote {
+    border-left: 4px solid #1890ff;
+    padding: 16px 20px;
+    margin: 24px 0;
+    background: #f6f8fa;
+    border-radius: 0 8px 8px 0;
+    color: #666;
+}
+
+.article-detail-page .article-content blockquote p {
+    margin: 0;
+    color: #666;
+}
+
+.article-detail-page .article-content ul,
+.article-detail-page .article-content ol {
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.article-detail-page .article-content li {
+    margin-bottom: 8px;
+    line-height: 1.8;
+}
+
+.article-detail-page .article-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 24px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-detail-page .article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.article-detail-page .article-content th,
+.article-detail-page .article-content td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.article-detail-page .article-content th {
+    background: #f7f8fa;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.article-detail-page .article-content tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    .article-detail-page {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border-top: 1px solid #f0f0f0;
+    }
+    .article-detail-page .article-header {
+        padding: 20px 16px 0;
+    }
+    .article-detail-page .article-title {
+        font-size: 24px;
+    }
+    .article-detail-page .author-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .article-detail-page .quick-actions {
+        align-self: stretch;
+        justify-content: space-around;
+    }
+    .article-detail-page .article-body {
+        padding: 20px 16px;
+    }
+    .article-detail-page .article-content {
+        font-size: 15px;
+    }
+    .article-detail-page .article-footer {
+        padding: 0 16px 20px;
+    }
+    .article-detail-page .footer-stats {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .article-detail-page .stats-info {
+        justify-content: center;
+    }
+}

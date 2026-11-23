@@ -1,16 +1,40 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html,
 body {
-  max-width: 100vw;
-  max-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 
 .max-width-content {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 修复编辑器全屏时与 Modal 的层级冲突 */
+
+.bytemd-fullscreen {
+    z-index: 1060 !important;
+}
+
+.bytemd-fullscreen .bytemd {
+    z-index: 1060 !important;
+}
+
+.bytemd-fullscreen .bytemd-toolbar {
+    z-index: 1061 !important;
+}
+
+.bytemd-fullscreen .bytemd-editor,
+.bytemd-fullscreen .bytemd-preview {
+    z-index: 1060 !important;
+}
+
+.bytemd-fullscreen .bytemd-status {
+    z-index: 1060 !important;
 }

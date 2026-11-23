@@ -1,0 +1,325 @@
+/* 文章列表容器 */
+
+.article-list {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* 搜索区域 */
+
+.article-list .search-section {
+    margin-bottom: 32px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.article-list .search-container {
+    padding: 20px 24px;
+}
+
+.article-list .search-content {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.article-list .search-input {
+    flex: 1;
+}
+
+.article-list .search-input .ant-input-search-button {
+    background: #1890ff;
+    color: #fff;
+    border-color: #1890ff;
+    transition: all 0.2s ease;
+}
+
+.article-list .search-input .ant-input-search-button:hover {
+    background: #40a9ff;
+    color: #fff;
+    border-color: #40a9ff;
+}
+
+.article-list .filter-select .ant-select-selector {
+    border: 1px solid #d9d9d9;
+}
+
+
+/* 文章列表项 */
+
+.article-list .article-item {
+    margin-bottom: 0;
+    border: none;
+    padding: 0;
+}
+
+.article-list .article-item .ant-list-item {
+    border: none;
+    padding: 24px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.article-list .article-item:last-child .ant-list-item {
+    border-bottom: none;
+}
+
+.article-list .article-card {
+    background: #fff;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 0 -4px;
+}
+
+.article-list .article-card:hover {
+    background: #fafbfc;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.article-list .article-main {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.article-list .article-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.article-list .category-tag {
+    margin-bottom: 12px;
+    font-size: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 4px 12px;
+    background: #e6f7ff;
+    border: 1px solid #91d5ff;
+    color: #1890ff;
+}
+
+.article-list .article-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-list .article-title {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #262626;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.article-list .article-title-link:hover .article-title {
+    color: #1890ff;
+}
+
+.article-list .article-summary {
+    color: #8c8c8c;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.article-list .article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.article-list .author-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.article-list .author-name {
+    color: #262626;
+    font-weight: 500;
+}
+
+.article-list .publish-time::before,
+.article-list .view-count::before {
+    content: "·";
+    margin: 0 6px;
+    color: #d9d9d9;
+}
+
+.article-list .view-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.article-list .view-count .anticon {
+    font-size: 12px;
+}
+
+.article-list .article-stats {
+    display: flex;
+    gap: 12px;
+}
+
+.article-list .stat-btn {
+    color: #8c8c8c;
+    padding: 4px 12px;
+    height: auto;
+    font-size: 13px;
+    border: none;
+    box-shadow: none;
+    border-radius: 6px;
+    min-width: auto;
+    transition: all 0.2s ease;
+    background: transparent;
+}
+
+.article-list .stat-btn:hover {
+    color: #1890ff;
+    background: #f0f7ff;
+}
+
+.article-list .stat-btn .anticon {
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+.article-list .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.article-list .tag-item {
+    margin: 0;
+    padding: 4px 10px;
+    font-size: 12px;
+    background: #f6f6f6;
+    border: none;
+    color: #8c8c8c;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.article-list .tag-item:hover {
+    background: #e6f7ff;
+    color: #1890ff;
+}
+
+.article-list .tag-more {
+    font-size: 12px;
+    color: #8c8c8c;
+}
+
+.article-list .article-cover {
+    flex-shrink: 0;
+}
+
+.article-list .cover-image {
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-list .pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    padding: 24px 0;
+}
+
+.article-list .pagination-wrapper .ant-pagination {
+    font-size: 16px;
+}
+
+.article-list .pagination-wrapper .ant-pagination-item {
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.2s ease;
+}
+
+.article-list .pagination-wrapper .ant-pagination-item:hover {
+    border-color: #1890ff;
+    transform: translateY(-1px);
+}
+
+.article-list .pagination-wrapper .ant-pagination-item-active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+}
+
+.article-list .pagination-wrapper .ant-pagination-item-active a {
+    color: #fff;
+}
+
+
+/* 空状态 */
+
+.article-list .ant-empty {
+    padding: 60px 20px;
+}
+
+.article-list .ant-empty-description {
+    color: #8c8c8c;
+    font-size: 16px;
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    .article-list {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+    .search-container {
+        padding: 16px;
+    }
+    .search-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .article-card {
+        padding: 20px;
+        margin: 0 -4px;
+    }
+    .article-main {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+    .article-cover {
+        align-self: flex-start;
+    }
+    .cover-image {
+        width: 120px;
+        height: 80px;
+    }
+    .article-list .article-title {
+        font-size: 18px;
+    }
+    .article-list .article-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .article-list .article-stats {
+        align-self: stretch;
+        justify-content: space-around;
+    }
+}

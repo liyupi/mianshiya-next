@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yupi.mianshiya.mapper.ArticleThumbMapper">
+
+    <resultMap id="BaseResultMap" type="com.yupi.mianshiya.model.entity.ArticleThumb">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="articleId" column="articleId" jdbcType="BIGINT"/>
+            <result property="userId" column="userId" jdbcType="BIGINT"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,articleId,userId,createTime,updateTime
+    </sql>
+</mapper>

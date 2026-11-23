@@ -1,4 +1,155 @@
 declare namespace API {
+  
+  type ArticleAddRequest = {
+    category?: string;
+    content?: string;
+    cover?: string;
+    status?: number;
+    summary?: string;
+    tags?: string[];
+    title?: string;
+  };
+
+  type ArticleEditRequest = {
+    category?: string;
+    content?: string;
+    cover?: string;
+    id?: number;
+    status?: number;
+    summary?: string;
+    tags?: string[];
+    title?: string;
+  };
+
+  type ArticleFavourAddRequest = {
+    articleId?: number;
+  };
+
+  type ArticleQueryRequest = {
+    category?: string;
+    content?: string;
+    current?: number;
+    id?: number;
+    notPublic?: boolean;
+    pageSize?: number;
+    searchText?: string;
+    sortField?: string;
+    sortOrder?: string;
+    status?: number;
+    tags?: string[];
+    title?: string;
+    userId?: number;
+  };
+
+  type ArticleThumbAddRequest = {
+    articleId?: number;
+  };
+
+  type ArticleUpdateRequest = {
+    category?: string;
+    content?: string;
+    cover?: string;
+    id?: number;
+    status?: number;
+    summary?: string;
+    tags?: string[];
+    title?: string;
+  };
+
+  type ArticleVO = {
+    category?: string;
+    content?: string;
+    cover?: string;
+    createTime?: string;
+    editTime?: string;
+    favourNum?: number;
+    hasFavour?: boolean;
+    hasThumb?: boolean;
+    id?: number;
+    status?: number;
+    summary?: string;
+    tagList?: string[];
+    thumbNum?: number;
+    title?: string;
+    updateTime?: string;
+    user?: UserVO;
+    userId?: number;
+    viewNum?: number;
+  };
+
+  type BaseResponseArticleVO = {
+    code?: number;
+    data?: ArticleVO;
+    message?: string;
+  };
+
+  type BaseResponsePageArticleVO = {
+    code?: number;
+    data?: PageArticleVO;
+    message?: string;
+  };
+
+  type BaseResponsePageArticle = {
+    code?: number;
+    data?: PageArticle;
+    message?: string;
+  };
+
+  type BaseResponseInt = {
+    code?: number;
+    data?: number;
+    message?: string;
+  };
+
+  type PageArticleVO = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: ArticleVO[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type PageArticle = {
+    countId?: string;
+    current?: number;
+    maxLimit?: number;
+    optimizeCountSql?: boolean;
+    orders?: OrderItem[];
+    pages?: number;
+    records?: Article[];
+    searchCount?: boolean;
+    size?: number;
+    total?: number;
+  };
+
+  type Article = {
+    category?: string;
+    content?: string;
+    cover?: string;
+    createTime?: string;
+    editTime?: string;
+    favourNum?: number;
+    id?: number;
+    isDelete?: number;
+    status?: number;
+    summary?: string;
+    tags?: string;
+    thumbNum?: number;
+    title?: string;
+    updateTime?: string;
+    userId?: number;
+    viewNum?: number;
+  };
+
+  type getArticleVOByIdUsingGETParams = {
+    /** id */
+    id: number;
+  };
   type BaseResponseBoolean_ = {
     code?: number;
     data?: boolean;

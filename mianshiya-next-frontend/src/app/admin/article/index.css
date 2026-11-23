@@ -1,0 +1,44 @@
+#articleAdminPage {
+    padding: 24px;
+}
+
+#articleAdminPage .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+#articleAdminPage .page-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#articleAdminPage .article-stats {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+#articleAdminPage .article-stats div {
+    margin-bottom: 2px;
+}
+
+#articleAdminPage .ant-table-cell {
+    vertical-align: top;
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    #articleAdminPage {
+        padding: 16px;
+    }
+    #articleAdminPage .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}
